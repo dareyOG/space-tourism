@@ -1,8 +1,12 @@
 import { useParams } from 'react-router-dom';
 
+type Crew = 'commander' | 'engineer' | 'pilot' | 'specialist';
+
 function Crew() {
-  const role = useParams<{ role: string }>();
+  const role = useParams<{ role: Crew }>();
   console.log(role);
+
+  // fetch crew data
   return <div>crew</div>;
 }
 

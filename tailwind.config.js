@@ -17,6 +17,13 @@ export default {
       },
       default: 'RGB(255,255,255)'
     },
+    backgroundImage: {
+      'bg-home': "url('/src/assets/home/background-home-mobile.jpg')",
+      'bg-home_tablet': "url('/src/assets/home/background-home-tablet.jpg')",
+      'bg-home_desktop': "url('/src/assets/home/background-home-desktop.jpg')",
+      'bg-destination': "url('/src/assets/destination/background-destination-desktop.jpg')",
+      'bg-crew': "url('/src/assets/crew/background-crew-desktop.jpg')",
+    },
     extend: {},
   },
   plugins: [],
