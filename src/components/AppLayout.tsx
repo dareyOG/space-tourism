@@ -1,24 +1,26 @@
-// import NavBar from './NavMenu';
-
-import logo from '../assets/shared/logo.svg';
 import { Outlet } from 'react-router-dom';
-import { LucideMenu } from 'lucide-react';
+
+import Logo from './Logo';
+import NavBar from './NavBar';
+import NavMenu from './NavMenu';
+import HamburgerMenu from './HamburgerMenu';
 
 function AppLayout() {
   return (
-    <div className="bg-bg-home bg-center bg-cover bg-no-repeat h-screen flex flex-col">
-      <header className="flex items-center justify-between p-[2.4rem]">
-        <img src={logo} alt="Logo" />
+    <div className="h-full bg-bg-home md:bg-bg-home_tablet lg:bg-bg-home_desktop bg-center bg-cover bg-no-repeat grid grid-rows-[repeat(auto,1fr)]">
+      <header className="flex items-center justify-between py-[2.4rem] md:gap-x-[4.8rem] lg:px-0 w-full lg:pt-[4rem] border border-transparent">
+        <div className="pl-[2.4rem] md:pl-[4rem]">
+          <Logo />
+        </div>
 
-        <button
-          onClick={() => {
-            console.log('clicked menu bar');
-          }}
-        >
-          <LucideMenu />
-        </button>
+        <div className="pr-[2.4rem] md:pr-0">
+          <HamburgerMenu />
+          <NavBar />
+          <NavMenu />
+        </div>
       </header>
-      <main className="p-[2.4rem]">
+      {/* content */}
+      <main>
         <Outlet />
       </main>
     </div>

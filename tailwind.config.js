@@ -5,17 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      default: 'hsl(0, 0%, 100%)',
+      'dark-blue': 'hsl(230, 35%, 7%)',
+      'light-blue': 'hsl(231, 77%, 90%)',
+
+    },
+
     fontFamily: {
       sans: ['Bellefair', 'sans-serif'],
       serif: ['Barlow', 'serif'],
       mono: ['Barlow Condensed', 'monospace'],
-    },
-    colors: {
-      'blue': {
-        300: 'RGB(208,214,249)',
-        900: 'RGB(11,13,23)',
-      },
-      default: 'RGB(255,255,255)'
     },
     backgroundImage: {
       'bg-home': "url('/src/assets/home/background-home-mobile.jpg')",

@@ -14,9 +14,11 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Navigate replace to={'home'} />} />
           <Route path="home" element={<Home />} />
-          <Route path="crew/:role" element={<Crew />} />
-          <Route path="destination/:name" element={<Destination />} />
-          <Route path="technology/:name" element={<Technology />} />
+          <Route path="crew" element={<Crew />} />
+          <Route path="destination" element={<Destination />}>
+            <Route index element={<Navigate replace to={'destination/moon'} />} />
+          </Route>
+          <Route path="technology" element={<Technology />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
