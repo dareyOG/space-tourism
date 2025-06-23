@@ -1,13 +1,8 @@
 import { LucideMenu } from 'lucide-react';
 
-function HamburgerMenu() {
+function HamburgerMenu({ toggleNavMenu }: { toggleNavMenu: () => void }) {
   return (
-    <button
-      onClick={() => {
-        console.log('clicked menu bar');
-      }}
-      className="inline-block w-[2.4rem] h-[2.1rem] md:hidden"
-    >
+    <button onClick={toggleNavMenu} className="md:hidden">
       <LucideMenu />
     </button>
   );

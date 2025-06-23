@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
 import { X } from 'lucide-react';
 
-function NavMenu() {
+function NavMenu({ toggleNavMenu }: { toggleNavMenu: () => void }) {
   return (
     <nav className="md:hidden bg-light-blue/15 backdrop-blur-lg fixed top-0 right-0 w-full max-w-[65vw] h-screen pl-[3.2rem] flex flex-col gap-y-[4.8rem] transition-all duration-300">
-      <div
-        role="button"
-        onClick={() => console.log('close menu')}
-        className="lg:hidden py-[3.2rem] w-full flex justify-end pr-[2.4rem]"
-      >
-        <X />
+      <div className=" py-[3.2rem] pr-[2.4rem] flex justify-end">
+        <button onClick={toggleNavMenu} className="lg:hidden">
+          <X />
+        </button>
       </div>
       <ul className="flex flex-col gap-y-[3.2rem] text-[1.6rem] uppercase">
         <li>

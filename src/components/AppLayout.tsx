@@ -4,25 +4,32 @@ import Logo from './Logo';
 import NavBar from './NavBar';
 import NavMenu from './NavMenu';
 import HamburgerMenu from './HamburgerMenu';
+import { useState } from 'react';
 
 function AppLayout() {
+  const [isNavMenu, setIsNavMenu] = useState(false);
+
+  const toggleNavMenu = () => setIsNavMenu(navMenu => !navMenu);
+
   return (
-    <div className="h-full bg-bg-home md:bg-bg-home_tablet lg:bg-bg-home_desktop bg-center bg-cover bg-no-repeat grid grid-rows-[repeat(auto,1fr)]">
-      <header className="flex items-center justify-between py-[2.4rem] md:gap-x-[4.8rem] lg:px-0 w-full lg:pt-[4rem] border border-transparent">
+    <div className="grid grid-rows-[auto_1fr] ">
+      {/* <div className="absolute top-0 left-0 right-0"> */}
+      <header className="flex relative z-10 items-center justify-between pt-[2.4rem] md:gap-x-[4.8rem] lg:px-0 w-full lg:pt-[4rem] ">
         <div className="pl-[2.4rem] md:pl-[4rem]">
           <Logo />
         </div>
 
         <div className="pr-[2.4rem] md:pr-0">
-          <HamburgerMenu />
+          <HamburgerMenu toggleNavMenu={toggleNavMenu} />
           <NavBar />
-          <NavMenu />
+          {isNavMenu && <NavMenu toggleNavMenu={toggleNavMenu} />}
         </div>
       </header>
       {/* content */}
-      <main>
+      <main className="h-screen">
         <Outlet />
       </main>
+      {/* </div> */}
     </div>
   );
 }

@@ -10,7 +10,7 @@ function NavBar() {
             to={'home'}
             className={({ isActive }) =>
               `flex items-center border-b-2 justify-between md:h-[10rem] lg:h-[9.6rem] md:gap-x-[1.2rem] ${
-                isActive ? 'border-default' : 'border-transparent'
+                isActive ? 'border-default' : 'border-transparent hover:text-dark-blue'
               }`
             }
           >
@@ -23,7 +23,7 @@ function NavBar() {
             to={'destination'}
             className={({ isActive }) =>
               `flex items-center border-b-2 justify-between md:h-[10rem] lg:h-[9.6rem] md:gap-x-[1.2rem] ${
-                isActive ? 'border-default' : 'border-transparent'
+                isActive ? 'border-default' : 'border-transparent hover:text-dark-blue'
               }`
             }
           >
@@ -36,7 +36,7 @@ function NavBar() {
             to={'crew'}
             className={({ isActive }) =>
               `flex items-center border-b-2 justify-between md:h-[10rem] lg:h-[9.6rem] md:gap-x-[1.2rem] ${
-                isActive ? 'border-default' : 'border-transparent'
+                isActive ? 'border-default' : 'border-transparent hover:text-dark-blue'
               }`
             }
           >
@@ -49,7 +49,7 @@ function NavBar() {
             to={'technology'}
             className={({ isActive }) =>
               `flex items-center border-b-2 justify-between md:h-[10rem] lg:h-[9.6rem] md:gap-x-[1.2rem] ${
-                isActive ? 'border-default' : 'border-transparent'
+                isActive ? 'border-default' : 'border-transparent hover:text-dark-blue'
               }`
             }
           >

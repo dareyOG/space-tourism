@@ -13,11 +13,11 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light dark; */
+  color-scheme: light dark;
 }
 
 body {
-  @apply box-border m-0 p-0 h-screen font-sans text-default;
+  @apply box-border m-0 p-0 text-default;
 }
 
 /* 
