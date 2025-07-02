@@ -1,6 +1,9 @@
 import { LucideMenu } from 'lucide-react';
+import { useContext } from 'react';
+import { NavMenuContext } from '../context/NavMenuContext';
 
-function HamburgerMenu({ toggleNavMenu }: { toggleNavMenu: () => void }) {
+function HamburgerMenu() {
+  const { toggleNavMenu } = useContext(NavMenuContext);
   return (
     <button onClick={toggleNavMenu} className="md:hidden">
       <LucideMenu />

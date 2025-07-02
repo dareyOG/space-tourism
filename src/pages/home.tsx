@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <section className="p-[2.4rem] md:px-[4rem] md:py-[12.8rem] flex lg:px-0 h-full">
+    <section className="h-screen p-[2.4rem] md:px-[4rem] md:py-[12.8rem] flex lg:px-0">
       <div className="flex flex-col gap-[4.8rem] lg:gap-0 lg:flex-row items-center justify-center lg:justify-normal md:w-[51.2rem] lg:w-[111rem] mx-auto">
         <div className="flex flex-col justify-center text-center lg:text-start lg:w-[54rem] gap-[2.4rem]">
           <p className="text-[1.6rem] md:text-[2rem] lg:text-[2.8rem] md:font-mono uppercase">
@@ -18,7 +18,7 @@ function Home() {
         <div className="w-full lg:flex lg:justify-end lg:items-end lg:w-[54rem] lg:h-[54rem]">
           <Link
             to="/destination"
-            className="flex justify-center items-center text-[1.8rem] md:text-[3.2rem] uppercase rounded-full bg-default w-[14.4rem] md:w-[27.2rem] aspect-square text-dark-blue hover:text-opacity-50 mx-auto lg:mx-0 hover:shadow-[0_0_0_7.5rem_rgb(225,225,225,.3)] transition-all ease-out duration-300 animate-pulse lg:animate-bounce hover:animate-none "
+            className="flex justify-center items-center text-[1.8rem] md:text-[3.2rem] uppercase rounded-full bg-default w-[14.4rem] md:w-[27.2rem] aspect-square text-dark-blue hover:text-opacity-50 mx-auto lg:mx-0 hover:shadow-[0_0_0_7.5rem_rgb(225,225,225,.3)] transition-all ease-out duration-300 "
           >
             Explore
           </Link>
@@ -29,3 +29,5 @@ function Home() {
 }
 
 export default Home;
+
+// animate-pulse lg:animate-bounce hover:animate-none

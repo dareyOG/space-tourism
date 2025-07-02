@@ -6,18 +6,25 @@ import Destination from './pages/destination';
 import Technology from './pages/technology';
 import PageNotFound from './pages/PageNotFound';
 import AppLayout from './components/AppLayout';
+import DestinationContent from './components/DestinationContent';
+// import DestinationContent from './components/DestinationContent';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route index element={<Navigate replace to={'home'} />} />
-          <Route path="home" element={<Home />} />
-          <Route path="crew" element={<Crew />} />
+          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="destination" element={<Destination />} />
           <Route path="destination" element={<Destination />}>
-            <Route index element={<Navigate replace to={'destination/moon'} />} />
+            <Route index element={<Navigate to={'/destination/moon'} />} />
+            <Route path={'moon'} element={<DestinationContent />} />
+            <Route path={'mars'} element={<DestinationContent />} />
+            <Route path={'europa'} element={<DestinationContent />} />
+            <Route path={'titan'} element={<DestinationContent />} />
           </Route>
+          <Route path="crew" element={<Crew />} />
           <Route path="technology" element={<Technology />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
