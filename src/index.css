@@ -8,16 +8,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-size: 62.5%; /* 1rem = 10px */
-  line-height: 1.5;
-  font-weight: 400;
+*::before,
+*,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
-  color-scheme: light dark;
+html {
+  @apply text-[62.5%];
 }
 
 body {
-  @apply box-border m-0 p-0 text-default;
+  @apply text-default box-border font-normal leading-[1.5] h-screen;
 }
 
 /* 

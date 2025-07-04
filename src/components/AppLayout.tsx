@@ -9,14 +9,11 @@ function AppLayout() {
   return (
     <NavMenuProvider>
       <Main>
-        <div className="border border-default">
-          <Navigation />
-        </div>
-        <div className="border border-default">
-          <Content>
-            <Outlet />
-          </Content>
-        </div>
+        <Navigation />
+
+        <Content>
+          <Outlet />
+        </Content>
       </Main>
     </NavMenuProvider>
   );

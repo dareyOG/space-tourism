@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <section className="h-screen p-[2.4rem] md:px-[4rem] md:py-[12.8rem] flex lg:px-0">
+    <section className="h-full p-[2.4rem] md:px-[4rem] md:py-[12.8rem] flex lg:px-0">
       <div className="flex flex-col gap-[4.8rem] lg:gap-0 lg:flex-row items-center justify-center lg:justify-normal md:w-[51.2rem] lg:w-[111rem] mx-auto">
         <div className="flex flex-col justify-center text-center lg:text-start lg:w-[54rem] gap-[2.4rem]">
           <p className="text-[1.6rem] md:text-[2rem] lg:text-[2.8rem] md:font-mono uppercase">
