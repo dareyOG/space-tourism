@@ -2,12 +2,16 @@ import { createContext, useState } from 'react';
 
 type NavMenuContextType = {
   isNavMenu: boolean;
-  toggleNavMenu: () => void;
+  // toggleNavMenu: () => void;
+  openNavMenu: () => void;
+  closeNavMenu: () => void;
 };
 
 const initialState = {
   isNavMenu: false,
-  toggleNavMenu: () => {}
+  // toggleNavMenu: () => {}
+  openNavMenu: () => {},
+  closeNavMenu: () => {}
 };
 
 const NavMenuContext = createContext<NavMenuContextType>(initialState);
@@ -15,9 +19,11 @@ const NavMenuContext = createContext<NavMenuContextType>(initialState);
 function NavMenuProvider({ children }: { children: React.ReactNode }) {
   const [isNavMenu, setIsNavMenu] = useState(false);
 
-  const toggleNavMenu = () => setIsNavMenu(navMenu => !navMenu);
+  const openNavMenu = () => setIsNavMenu(true);
+  const closeNavMenu = () => setIsNavMenu(false);
+
   return (
-    <NavMenuContext.Provider value={{ isNavMenu, toggleNavMenu }}>
+    <NavMenuContext.Provider value={{ isNavMenu, openNavMenu, closeNavMenu }}>
       {children}
     </NavMenuContext.Provider>
   );

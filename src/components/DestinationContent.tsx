@@ -13,33 +13,36 @@ function DestinationContent() {
   );
 
   return (
-    <div className="flex flex-col gap-y-[3.2rem]">
-      <div className="w-auto mx-auto">
+    <div className="grid lg:grid-cols-2 gap-[3.2rem] ">
+      <figure className="m-auto place-items-center">
         <img
           src={`/assets/destinations/image-${destination?.name.toLowerCase()}.png`}
           alt={destination?.name}
-          width={'150'}
-          height={'150'}
+          className="w-3/4 aspect-square "
         />
-      </div>
-      <div className="flex flex-col gap-y-[2.4rem] divide-y divide-solid divide-light-blue divide-opacity-25">
-        <div>
-          <DestinationNav />
-          <div className="flex flex-col gap-y-[1.6rem] text-light-blue justify-center items-center">
+      </figure>
+      <div className="flex flex-col gap-y-[4rem]">
+        <DestinationNav />
+        <div
+          role="contentinfo"
+          className="flex flex-col gap-y-[2.4rem] justify-center items-center"
+        >
+          <div className="flex flex-col gap-y-[1.6rem] text-light-blue justify-center items-center lg:items-start">
             <h2 className="text-[5.6rem] uppercase">{destination?.name}</h2>
             <p className="text-[1.5rem] leading-[180%] font-serif text-center">
               {destination?.description}
             </p>
           </div>
-        </div>
-        <div className="flex flex-col gap-y-[2.4rem] uppercase items-center justify-center text-center">
-          <div className="">
-            <p className="text-light-blue text-[1.4rem]"> Avg. distance</p>
-            <p className="text-default text-[2.8rem]">{destination?.distance}</p>
-          </div>
-          <div className="">
-            <p className="text-light-blue text-[1.4rem]">Est. travel time</p>
-            <p className="text-default text-[2.8rem]">{destination?.travel}</p>
+          <div className="h-[1px] mx-auto w-full bg-light-blue/25"></div>
+          <div className="text-center flex flex-col lg:flex-row lg:gap-x-[2.4rem] uppercase lg:text-justify lg:pt-[2rem] ">
+            <div className="">
+              <p className="text-light-blue text-[1.4rem]"> Avg. distance</p>
+              <p className="text-default text-[2.8rem]">{destination?.distance}</p>
+            </div>
+            <div className="">
+              <p className="text-light-blue text-[1.4rem]">Est. travel time</p>
+              <p className="text-default text-[2.8rem]">{destination?.travel}</p>
+            </div>
           </div>
         </div>
       </div>

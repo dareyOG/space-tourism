@@ -17,11 +17,11 @@
 }
 
 html {
-  @apply text-[62.5%];
+  @apply text-[62.5%] leading-[1.5];
 }
 
 body {
-  @apply text-default box-border font-normal leading-[1.5] h-screen;
+  @apply text-default box-border font-normal;
 }
 
 /* 

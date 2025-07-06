@@ -23,7 +23,7 @@ function DestinationNav() {
 
   return (
     <nav>
-      <ul className="flex gap-x-[3.2rem] uppercase justify-center items-start h-[3.2rem] text-[1.6rem]">
+      <ul className="flex gap-x-[3.2rem] uppercase justify-center lg:justify-start items-start h-[3.2rem] text-[1.6rem]">
         {destinations.map(destination => (
           <li key={destination.destination}>
             <NavLink

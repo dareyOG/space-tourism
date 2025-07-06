@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import { NavMenuContext } from '../context/NavMenuContext';
 
 function HamburgerMenu() {
-  const { toggleNavMenu } = useContext(NavMenuContext);
+  const { openNavMenu } = useContext(NavMenuContext);
   return (
-    <button onClick={toggleNavMenu} className="md:hidden">
+    <button onClick={openNavMenu} className="md:hidden">
       <LucideMenu />
     </button>
   );
