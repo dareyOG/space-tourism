@@ -1,41 +1,25 @@
-import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-// const crew = [
-//   { name: 'Douglas Hurley' },
-//   { name: 'Mark Shuttleworth' },
-//   { name: 'Victor Glover' },
-//   { name: 'Anousheh Ansari' }
-// ];
-const crew = ['Douglas Hurley', 'Mark Shuttleworth', 'Victor Glover', 'Anousheh Ansari'];
+const crew = ['douglas hurley', 'mark shuttleworth', 'victor glover', 'anousheh ansari'];
 
 function CrewNav() {
-  //   const { pathname } = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  useEffect(() => {
-    if (!searchParams.get('crew')) {
-      searchParams.set('crew', crew[0].split(' ').join('-').toLowerCase());
-      setSearchParams(searchParams);
-    }
-  }, [searchParams, setSearchParams]);
-
-  const currCrew = searchParams.get('crew');
-
-  console.log(currCrew);
+  const currMember = searchParams.get('crew') || crew[0];
+  console.log(currMember);
 
   return (
     <nav>
       <ul className="flex gap-x-[1.6rem] justify-center items-start">
-        {crew.map(crew => (
-          <li key={crew}>
+        {crew.map(member => (
+          <li key={member}>
             <button
               onClick={() => {
-                searchParams.set('crew', crew.split(' ').join('-').toLowerCase());
+                searchParams.set('crew', member.split(' ').join('-').toLowerCase());
                 setSearchParams(searchParams);
               }}
               className={`w-[1.4rem] aspect-square rounded-full ${
-                currCrew?.split('-').join(' ') === `${crew.toLowerCase()}`
+                currMember?.split('-').join(' ') === (`${member}` || crew[0])
                   ? 'bg-default hover:bg-dark-blue/50'
                   : 'bg-light-blue/50 hover:bg-default'
               }`}

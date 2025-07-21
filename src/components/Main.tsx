@@ -5,7 +5,7 @@ function Main({ children }: { children: React.ReactNode }) {
 
   return (
     <main
-      className={`grid grid-rows-[auto_1fr] ${
+      className={`grid grid-rows-[auto_1fr] min-h-screen ${
         pathname.split('/').includes('crew')
           ? 'bg-crew md:bg-crew_tablet lg:bg-crew_desktop'
           : pathname.split('/').includes('destination')

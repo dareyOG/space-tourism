@@ -1,46 +1,18 @@
 import { useEffect, useState } from 'react';
-
-type Destination = {
-  description: string;
-  distance: string;
-  name: string;
-  travel: string;
-};
-
-type Crew = {
-  bio: string;
-  name: string;
-  role: string;
-  images: {
-    png: string;
-    webp: string;
-  };
-};
-
-type Technology = {
-  description: string;
-  images: {
-    portrait: string;
-    landscape: string;
-  };
-  name: string;
-};
+import type { Tourism } from '../types';
 
 export const useTourism = () => {
-  const [destinations, setDestinations] = useState<Destination[]>([]);
-  const [crew, setCrew] = useState<Crew[]>([]);
-  const [technology, setTechnology] = useState<Technology[]>([]);
+  const [tourism, setTourism] = useState<Tourism>();
 
   useEffect(() => {
     const fetchTourism = async function () {
       const res = await fetch('/data/data.json');
-      const { destinations, crew, technology } = await res.json();
-      setDestinations(destinations);
-      setCrew(crew);
-      setTechnology(technology);
+      const data = await res.json();
+
+      setTourism(data);
     };
     fetchTourism();
   }, []);
 
-  return { destinations, crew, technology };
+  return tourism;
 };
