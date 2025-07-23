@@ -8,7 +8,7 @@ function CrewContent() {
   const [crewMember, setCrewMember] = useState<Crew>();
   const [searchParams] = useSearchParams();
 
-  const { tourism, isLoading } = useTourism();
+  const { tourism } = useTourism();
   const { crew } = tourism || {};
 
   console.log(crew);
@@ -25,10 +25,6 @@ function CrewContent() {
   }, [searchParams, crew, setCrewMember]);
 
   console.log(crewMember);
-
-  if (isLoading || !crewMember) {
-    return <div className="text-center text-light-blue">Loading...</div>;
-  }
 
   return (
     <div className="grid lg:grid-cols-2 lg:gap-y-[3.2rem] ">

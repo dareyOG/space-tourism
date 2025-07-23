@@ -9,7 +9,7 @@ function TechnologyContent() {
   const [technology, setTechnology] = useState<Technology>();
   const [searchParams] = useSearchParams();
 
-  const { tourism, isLoading } = useTourism();
+  const { tourism } = useTourism();
   const { technology: tech } = tourism || {};
 
   console.log(tech);
@@ -28,10 +28,6 @@ function TechnologyContent() {
   }, [searchParams, tech, setTechnology]);
 
   console.log(technology);
-
-  if (isLoading || !technology) {
-    return <div className="text-center text-light-blue">Loading...</div>;
-  }
 
   return (
     <div className="grid lg:grid-cols-2 lg:grid-rows-1 gap-y-[3.2rem] ">

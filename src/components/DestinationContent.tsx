@@ -8,7 +8,7 @@ function DestinationContent() {
   const [destination, setDestination] = useState<Destination>();
   const [searchParams] = useSearchParams();
 
-  const { tourism, isLoading } = useTourism();
+  const { tourism } = useTourism();
   const { destinations } = tourism || {};
 
   console.log(destinations);
@@ -24,10 +24,6 @@ function DestinationContent() {
   }, [searchParams, destination, destinations]);
 
   console.log(destination);
-
-  if (isLoading || !destination) {
-    return <div className="text-center text-light-blue">Loading...</div>;
-  }
 
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between gap-[3.2rem] w-full ">
