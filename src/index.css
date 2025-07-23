@@ -23,31 +23,3 @@ html {
 body {
   @apply text-default box-border font-normal;
 }
-
-/* 
-
-font-family
-
- bellefair
-preset 1,2,3,4,6
-
-barlow condensed
-preset 5,8
-
-barlow
-preset 9
-*/
-
-/*
-font-size
-
-preset1:8rem,_,14.4rem
-preset2:6.4rem,8rem,9.6rem
-preset3:2.4rem,4rem,5.6rem
-preset4:1.8rem,2.4rem,3.2rem
-preset5:_,2rem,2.8rem
-preset6:1.6rem,_,2.8rem
-preset7:_,_,1.4rem
-preset8:1.4rem,_,1.6rem
-preset9:1.5rem,1.6rem,1.8rem
- */

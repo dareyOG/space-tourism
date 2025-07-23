@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 
+import { NavMenuContext } from '../context/NavMenuContext';
+
 import HamburgerMenu from './HamburgerMenu';
 import Logo from './Logo';
 import NavBar from './NavBar';
 import NavMenu from './NavMenu';
-
-import { NavMenuContext } from '../context/NavMenuContext';
 
 function Navigation() {
   const { isNavMenu } = useContext(NavMenuContext);

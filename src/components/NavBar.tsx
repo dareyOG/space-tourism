@@ -5,7 +5,6 @@ const navLinks = ['home', 'destination', 'crew', 'technology'];
 function NavBar() {
   return (
     <nav className="hidden md:flex md:items-center">
-      {/* <div className="hidden lg:flex h-[1px] w-[40vw] items-center bg-default opacity-25 relative top-0 left-10 z-10"></div> */}
       <ul className="bg-default/5 opacity-100 backdrop-blur-lg flex md:justify-end lg:justify-between items-center gap-[3.2rem] md:gap-[4.8rem] text-[1.6rem] font-mono uppercase text-white gap-x-[2rem] px-[2.4rem] md:px-[4rem] lg:px-[6.4rem] border-2 border-transparent">
         {navLinks.map((link, index) => (
           <li key={link}>

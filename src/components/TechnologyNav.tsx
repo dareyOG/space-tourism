@@ -6,10 +6,9 @@ function TechnologyNav() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const currTech = searchParams.get('tech') || technology[0];
-  console.log(currTech);
 
   return (
-    <nav className="">
+    <nav>
       <ul className="flex lg:flex-col gap-x-[1.6rem] lg:gap-y-[3.2rem] justify-center">
         {technology.map((tech, index) => (
           <button

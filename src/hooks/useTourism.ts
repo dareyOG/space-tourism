@@ -1,5 +1,3 @@
-// import { useEffect, useState } from 'react';
-// import type { Tourism } from '../types';
 import useSWR from 'swr';
 
 export const useTourism = () => {
@@ -7,8 +5,5 @@ export const useTourism = () => {
 
   const { data: tourism } = useSWR('/data/data.json', fetcher);
 
-  // if (!tourism) {
-  //   return { tourism: null, isLoading: true };
-  // }
   return { tourism };
 };
