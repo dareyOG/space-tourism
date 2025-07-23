@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react';
-import type { Tourism } from '../types';
+// import { useEffect, useState } from 'react';
+// import type { Tourism } from '../types';
+import useSWR from 'swr';
 
 export const useTourism = () => {
-  const [tourism, setTourism] = useState<Tourism>();
+  const fetcher = () => fetch('/data/data.json').then(res => res.json());
 
-  useEffect(() => {
-    const fetchTourism = async function () {
-      const res = await fetch('/data/data.json');
-      const data = await res.json();
+  const { data: tourism, isLoading } = useSWR('/data/data.json', fetcher);
 
-      setTourism(data);
-    };
-    fetchTourism();
-  }, []);
-
-  return tourism;
+  // if (!tourism) {
+  //   return { tourism: null, isLoading: true };
+  // }
+  return { tourism, isLoading };
 };

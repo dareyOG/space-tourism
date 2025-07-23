@@ -8,21 +8,29 @@ function DestinationContent() {
   const [destination, setDestination] = useState<Destination>();
   const [searchParams] = useSearchParams();
 
-  const tourism = useTourism();
+  const { tourism, isLoading } = useTourism();
+  const { destinations } = tourism || {};
 
-  const destinations = tourism?.destinations;
+  console.log(destinations);
 
   useEffect(() => {
     const params = searchParams.get('destination');
 
-    const destination = destinations?.find(
-      destination => destination.name.toLowerCase() === (params?.toLowerCase() || 'moon')
+    const currDestination = destinations?.find(
+      (destination: Destination) =>
+        destination.name.toLowerCase() === (params?.toLowerCase() || 'moon')
     );
-    setDestination(destination);
-  }, [searchParams, destinations]);
+    setDestination(currDestination);
+  }, [searchParams, destination, destinations]);
+
+  console.log(destination);
+
+  if (isLoading || !destination) {
+    return <div className="text-center text-light-blue">Loading...</div>;
+  }
 
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between gap-[3.2rem] w-full border border-yellow-500">
+    <div className="flex flex-col lg:flex-row lg:justify-between gap-[3.2rem] w-full ">
       <figure className="flex justify-center items-center">
         <img
           src={`/assets/destinations/image-${destination?.name.toLowerCase()}.png`}
@@ -30,7 +38,7 @@ function DestinationContent() {
           className="w-3/4 aspect-square"
         />
       </figure>
-      <div className="flex flex-col gap-y-[4rem] border border-default md:w-[51.4rem]">
+      <div className="flex flex-col gap-y-[4rem]  md:w-[51.4rem]">
         <DestinationNav />
         <div
           role="contentinfo"

@@ -10,7 +10,7 @@ function CrewNav() {
 
   return (
     <nav>
-      <ul className="flex gap-x-[1.6rem] justify-center items-start">
+      <ul className="flex gap-x-[1.6rem] justify-center items-start   lg:justify-normal lg:items-start">
         {crew.map(member => (
           <li key={member}>
             <button

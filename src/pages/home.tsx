@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <section className="h-full p-[2.4rem] md:px-[4rem] md:py-[12.8rem] lg:flex lg:items-end">
+    <section className="p-[2.4rem] md:px-[4rem] md:py-[12.8rem] lg:flex lg:items-end">
       <div className="flex flex-col lg:flex-row lg:justify-between md:w-[51.2rem] gap-y-[.8rem] lg:w-[80%] md:mx-auto">
         <div className="flex flex-col gap-y-[2.4rem] items-center lg:items-start lg:justify-end text-center lg:text-balance lg:w-1/2 lg:text-start w-fit ">
           <p className="text-[1.6rem] uppercase"> so, you want to travel to</p>
@@ -16,7 +16,7 @@ function Home() {
         <div className="flex justify-end items-center aspect-square md:aspect-auto">
           <Link
             to="/destination"
-            className="flex justify-center items-center text-[1.8rem] md:text-[3.2rem] uppercase rounded-full bg-default w-[14.4rem] md:w-[27.2rem] aspect-square text-dark-blue hover:text-opacity-50 mx-auto lg:mx-0 hover:shadow-[0_0_0_7.5rem_rgb(225,225,225,.3)] transition-all ease-out duration-300"
+            className="flex justify-center items-center text-[1.8rem] md:text-[3.2rem] uppercase rounded-full bg-default w-[14.4rem] md:w-[27.2rem] aspect-square text-dark-blue hover:text-opacity-50 mx-auto lg:mx-0 hover:shadow-[0_0_0_7.5rem_rgb(225,225,225,.3)] transition-all ease-in-out duration-500"
           >
             Explore
           </Link>
